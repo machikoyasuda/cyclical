@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208222212) do
+ActiveRecord::Schema.define(version: 20150208225700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,5 +43,31 @@ ActiveRecord::Schema.define(version: 20150208222212) do
 
   add_index "connections", ["account_id"], name: "index_connections_on_account_id", using: :btree
   add_index "connections", ["token"], name: "index_connections_on_token", using: :btree
+
+  create_table "days", force: true do |t|
+    t.string   "date"
+    t.string   "updated"
+    t.integer  "cycle_day"
+    t.decimal  "temperature"
+    t.boolean  "questionable_temp"
+    t.boolean  "temp_shift"
+    t.boolean  "no_fluid"
+    t.integer  "fluid_sticky"
+    t.integer  "fluid_creamy"
+    t.integer  "fluid_eggwhite"
+    t.integer  "fluid_watery"
+    t.integer  "cervix_height"
+    t.integer  "cervix_openness"
+    t.integer  "cervix_firmness"
+    t.integer  "opk"
+    t.boolean  "peak_day"
+    t.integer  "sex"
+    t.boolean  "first_day"
+    t.boolean  "menstruation"
+    t.text     "custom"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
